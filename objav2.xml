@@ -1,1 +1,63 @@
-<xml xmlns="http://www.w3.org/1999/xhtml"></xml>
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="controls_whileUntil" id="1" inline="false" x="45" y="22">
+    <field name="MODE">UNTIL</field>
+    <value name="NUMBER">
+      <block type="sensor_button" id="2">
+        <field name="OBJECT">ENTER</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="controls_if" id="9" inline="false">
+        <mutation elseif="3" else="1"></mutation>
+        <value name="IF0">
+          <block type="sensor_button" id="16">
+            <field name="OBJECT">UP</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="movement_forward" id="26"></block>
+        </statement>
+        <value name="IF1">
+          <block type="sensor_button" id="40">
+            <field name="OBJECT">DOWN</field>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="movement_reverse" id="100"></block>
+        </statement>
+        <value name="IF2">
+          <block type="sensor_button" id="47">
+            <field name="OBJECT">LEFT</field>
+          </block>
+        </value>
+        <statement name="DO2">
+          <block type="movement_left" id="90"></block>
+        </statement>
+        <value name="IF3">
+          <block type="sensor_button" id="60">
+            <field name="OBJECT">RIGHT</field>
+          </block>
+        </value>
+        <statement name="DO3">
+          <block type="movement_right" id="110"></block>
+        </statement>
+        <statement name="ELSE">
+          <block type="movement_stutter" id="80">
+            <next>
+              <block type="robot_delay" id="121" inline="true">
+                <value name="DELAY">
+                  <block type="math_number" id="128">
+                    <field name="NUM">200</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="movement_stop" id="70"></block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>
